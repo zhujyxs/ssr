@@ -1,0 +1,28 @@
+.headerInfo {
+	float: right;
+	margin-right: 40px;
+}
+.headerInfo .anticon-bell {
+	font-size: 20px;
+	padding: 2px;
+}
+.headerInfo .userIcon {
+	margin-left: 20px;
+	margin-right: 10px;
+}
+.ant-dropdown-menu-item {
+	border-bottom: 1px solid #eee;
+	padding: 10px 12px !important;
+}
+.ant-dropdown-menu-item .anticon {
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	line-height: 30px;
+	color: white;
+	border-radius: 15px;
+}
+.ant-dropdown-menu-item span {
+	margin-left: 10px;
+	font-size: 14px;
+}

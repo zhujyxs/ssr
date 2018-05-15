@@ -1,0 +1,9 @@
+.formContainer {
+	background: #fff;
+	width: 100%;
+	padding: 10px;
+}
+.ant-form {
+	width: 50%;
+	margin: 20px 25% 0px 25% !important;
+}
