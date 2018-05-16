@@ -44,7 +44,8 @@ class Total extends React.PureComponent {
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+    return {};
 }
 
 export default connect(mapStateToProps)(Total);

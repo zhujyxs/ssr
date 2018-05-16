@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Link } from 'react-router';
 import HeaderInfo from '../headerInfo';
-import 'antd/dist/antd.css';
 import './index.css';
 
 const { Header, Sider, Content } = Layout;

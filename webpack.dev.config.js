@@ -5,8 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
-    devtool: 'source-map',
-    debug: true,
+    debug: false,
 
     entry: {
         main: ['./src/main'],
@@ -32,15 +31,24 @@ module.exports = {
 
         new webpack.DefinePlugin({
             'process.env': {
-                ENV: JSON.stringify('development'),
-                NODE_ENV: JSON.stringify('development')
+                ENV: JSON.stringify('production'),
+                NODE_ENV: JSON.stringify('production')
             },
-            '__NODE__': JSON.stringify(false),
+            '__NODE__': JSON.stringify(true),
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
             names: 'vendor',
             minChunks: Infinity
+        }),
+
+        new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false,  // remove all comments
+            },
+            compress: {
+                warnings: false
+            }
         }),
     ],
 

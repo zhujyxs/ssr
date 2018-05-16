@@ -67,7 +67,8 @@ class Rule extends Component {
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+    return {};
 }
 
 export default connect(mapStateToProps)(Rule);

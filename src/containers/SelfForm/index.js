@@ -78,7 +78,8 @@ class SelfForm extends Component {
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
+    return {};
 }
 
 export default connect(mapStateToProps)(SelfForm);

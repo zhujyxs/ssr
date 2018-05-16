@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider, connect } from 'react-redux';
 import createRouter from '../routes';
-import 'antd/dist/antd.css';
 
 export default class Root extends React.PureComponent {
     render() {
