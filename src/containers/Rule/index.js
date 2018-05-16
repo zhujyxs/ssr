@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'antd';
+import { Table, Progress } from 'antd';
 import Frame from '../../components/Frame';
 import './index.css';
 
@@ -9,35 +9,35 @@ const dataSource = [{
     name: '工单1',
     date: '2018-05-12',
     people: '张一瞻',
-    progress: '50'
+    progress: 50
 }, {
     key: '2',
     name: '工单2',
     date: '2018-05-13',
     people: '张一瞻',
-    progress: '40'
+    progress: 40
 }, {
     key: '3',
     name: '工单3',
     date: '2018-05-14',
     people: '张一瞻',
-    progress: '100'
+    progress: 100
 }, {
     key: '4',
     name: '工单4',
     date: '2018-05-15',
     people: '张一瞻',
-    progress: '50'
+    progress: 50
 }, {
     key: '5',
     name: '工单5',
     date: '2018-05-16',
     people: '张一瞻',
-    progress: '50'
+    progress: 50
 }];
 
 const columns = [{
-    title: '任务名称',
+    title: '工单名称',
     dataIndex: 'name',
     key: 'name',
 }, {
@@ -50,17 +50,18 @@ const columns = [{
     key: 'people',
 }, {
     title: '进度',
-    dataIndex: 'progress',
     key: 'progress',
+    dataIndex: 'progress',
+    render: number => <Progress percent={number} status={number === 100 ? 'success' : 'active'} />
 }];
 
 class Rule extends Component {
     render() {
         return (
             <Frame selectKey={'3'}>
-                <div className="tableConatiner">
-                    <Table dataSource={dataSource} columns={columns} />
-                </div>
+            <div className="tableConatiner">
+                <Table dataSource={dataSource} columns={columns} />
+            </div>
             </Frame>
         );
     }

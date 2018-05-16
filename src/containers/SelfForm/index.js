@@ -1,43 +1,52 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, DatePicker, Switch, notification, Icon } from 'antd';
 import Frame from '../../components/Frame';
 import './index.css';
 
 const FormItem = Form.Item;
 
 const formItemLayout = {
-    labelCol: {
-        xs: { span: 24 },
-        sm: { span: 8 },
-    },
-    wrapperCol: {
-        xs: { span: 24 },
-        sm: { span: 16 },
-    },
+    labelCol: { span: 8 },
+    wrapperCol: { span: 16 },
+};
+const formItemLayout_short = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 8 },
 };
 const tailFormItemLayout = {
-    wrapperCol: {
-        xs: {
-            span: 24,
-            offset: 0,
-        },
-        sm: {
-            span: 16,
-            offset: 8,
-        },
-    },
+    wrapperCol: { span: 16, offset: 8 }
 };
 
 class SelfForm extends Component {
+    submitForm() {
+        notification.open({
+            message: '工单动态提醒',
+            description: '工单已提交，请关注后续动态',
+            icon: <Icon type="smile-circle" style={{ color: '#108ee9' }} />,
+        });
+    }
+
     render() {
         return (
             <Frame selectKey={'2'}>
             <div className="formContainer">
                 <Form>
                     <FormItem
-                        {...formItemLayout}
+                        {...formItemLayout_short}
                         label="工单名称"
+                    >
+                        <Input />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout_short}
+                        label="申报人姓名"
+                    >
+                        <Input />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout_short}
+                        label="申报人工号"
                     >
                         <Input />
                     </FormItem>
@@ -49,24 +58,18 @@ class SelfForm extends Component {
                     </FormItem>
                     <FormItem
                         {...formItemLayout}
-                        label="申报人姓名"
-                    >
-                        <Input />
-                    </FormItem>
-                    <FormItem
-                        {...formItemLayout}
-                        label="申报人工号"
-                    >
-                        <Input />
-                    </FormItem>
-                    <FormItem
-                        {...formItemLayout}
                         label="申报日期"
                     >
-                        <Input />
+                        <DatePicker showTime format="YYYY-MM-DD" />
+                    </FormItem>
+                    <FormItem
+                        {...formItemLayout_short}
+                        label="是否接收动态通知"
+                    >
+                        <Switch defaultChecked />
                     </FormItem>
                     <FormItem {...tailFormItemLayout}>
-                        <Button type="primary" htmlType="submit">提交</Button>
+                        <Button type="primary" onClick={this.submitForm}>提交</Button>
                     </FormItem>
                 </Form>
             </div>

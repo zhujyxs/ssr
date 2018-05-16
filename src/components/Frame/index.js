@@ -58,8 +58,7 @@ class Frame extends Component {
                         />
                         <HeaderInfo />
                     </Header>
-                    <Content style={{ margin: '24px 16px', padding: 24, minHeight: 280 }}>
-                        {this.props.children}
+                    <Content style={{ margin: '24px 16px', padding: 24, minHeight: 280, overflowX: 'hidden', overflowY: 'scroll' }}>                        {this.props.children}
                     </Content>
                 </Layout>
             </Layout>
