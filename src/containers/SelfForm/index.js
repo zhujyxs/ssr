@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Form, Input, Button } from 'antd';
+import Frame from '../../components/Frame';
 import './index.css';
 
 const FormItem = Form.Item;
@@ -27,9 +29,10 @@ const tailFormItemLayout = {
     },
 };
 
-class Total extends Component {
+class SelfForm extends Component {
     render() {
         return (
+            <Frame selectKey={'2'}>
             <div className="formContainer">
                 <Form>
                     <FormItem
@@ -67,6 +70,7 @@ class Total extends Component {
                     </FormItem>
                 </Form>
             </div>
+            </Frame>
         );
     }
 }
@@ -74,4 +78,4 @@ class Total extends Component {
 function mapStateToProps(state, ownProps) {
 }
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(SelfForm);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { Link } from 'react-router';
 import HeaderInfo from '../headerInfo';
 import 'antd/dist/antd.css';
 import './index.css';
@@ -27,18 +28,24 @@ class Frame extends Component {
                         <div className="pic" />
                         {!this.state.collapsed && <div className="title">tseo demo</div>}
                     </div>
-                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                    <Menu theme="dark" mode="inline" defaultSelectedKeys={[this.props.selectKey]}>
                         <Menu.Item key="1">
-                            <Icon type="dashboard" />
-                            <span>总体数据</span>
+                            <Link to="/">
+                                <Icon type="dashboard" />
+                                <span>总体数据</span>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="2">
-                            <Icon type="form" />
-                            <span>表单填写</span>
+                            <Link to="/form">
+                                <Icon type="form" />
+                                <span>表单填写</span>
+                            </Link>
                         </Menu.Item>
                         <Menu.Item key="3">
-                            <Icon type="table" />
-                            <span>任务列表</span>
+                            <Link to="/rule">
+                                <Icon type="table" />
+                                <span>任务列表</span>
+                            </Link>
                         </Menu.Item>
                     </Menu>
                 </Sider>

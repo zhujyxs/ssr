@@ -57,7 +57,7 @@ const columns = [{
 class Rule extends Component {
     render() {
         return (
-            <Frame>
+            <Frame selectKey={'3'}>
                 <div className="tableConatiner">
                     <Table dataSource={dataSource} columns={columns} />
                 </div>

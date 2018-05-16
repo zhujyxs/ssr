@@ -1,5 +1,5 @@
 {
-  "name": "douban-movie-react-ssr",
+  "name": "react-ssr",
   "version": "1.0.0",
   "description": "A simple demo with Redux, React-router and React server side rendering",
   "repository": {
@@ -38,6 +38,7 @@
     "ignore-loader": "^0.1.1",
     "redux-logger": "^2.6.1",
     "style-loader": "^0.13.1",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
   }
