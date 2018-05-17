@@ -1,47 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table, Progress } from 'antd';
+import { fetchRuleList } from '../../actions/ruleList';
 import Frame from '../../components/Frame';
 import './index.css';
-
-const dataSource = [{
-    key: '1',
-    name: '工单1',
-    date: '2018-05-12',
-    people: '张一瞻',
-    progress: 50
-}, {
-    key: '2',
-    name: '工单2',
-    date: '2018-05-13',
-    people: '张一瞻',
-    progress: 40
-}, {
-    key: '3',
-    name: '工单3',
-    date: '2018-05-14',
-    people: '张一瞻',
-    progress: 100
-}, {
-    key: '4',
-    name: '工单4',
-    date: '2018-05-15',
-    people: '张一瞻',
-    progress: 50
-}, {
-    key: '5',
-    name: '工单5',
-    date: '2018-05-16',
-    people: '张一瞻',
-    progress: 50
-}];
 
 const columns = [{
     title: '工单名称',
     dataIndex: 'name',
     key: 'name',
 }, {
-    title: '提交日期',
+    title: '截止日期',
     dataIndex: 'date',
     key: 'date',
 }, {
@@ -49,26 +18,42 @@ const columns = [{
     dataIndex: 'people',
     key: 'people',
 }, {
+    title: '工号',
+    key: 'id',
+    dataIndex: 'id',
+}, {
     title: '进度',
     key: 'progress',
     dataIndex: 'progress',
-    render: number => <Progress percent={number} status={number === 100 ? 'success' : 'active'} />
+    render: number => <Progress percent={Number(number)} status={Number(number) === 100 ? 'success' : 'active'} />
 }];
 
 class Rule extends Component {
+    static loadData({store, props}) {
+        return store.dispatch(fetchRuleList());
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchRuleList());
+    }
+
     render() {
         return (
             <Frame selectKey={'3'}>
-            <div className="tableConatiner">
-                <Table dataSource={dataSource} columns={columns} />
-            </div>
+                <div className="tableConatiner">
+                    <Table dataSource={this.props.ruleList||[]} columns={columns} />
+                </div>
             </Frame>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return {};
+    const { ruleList, dispatch } = state;
+    return {
+        ruleList,
+        dispatch
+    };
 }
 
 export default connect(mapStateToProps)(Rule);

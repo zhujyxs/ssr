@@ -42,14 +42,14 @@ module.exports = {
             minChunks: Infinity
         }),
 
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false,  // remove all comments
-            },
-            compress: {
-                warnings: false
-            }
-        }),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     output: {
+        //         comments: false,  // remove all comments
+        //     },
+        //     compress: {
+        //         warnings: false
+        //     }
+        // }),
     ],
 
 };

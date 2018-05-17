@@ -1,8 +1,15 @@
 import { combineReducers } from 'redux';
-import { movieList } from './movieList';
-import { movieDetail } from './movieDetail';
+
+const ruleList = (state = [], action) => {
+    switch(action.type) {
+        case 'RULE_LIST':
+            return action.res;
+            break;
+        default:
+            return state;
+    }
+};
 
 export default combineReducers({
-    movieList,
-    movieDetail,
+    ruleList,
 });

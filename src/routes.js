@@ -4,7 +4,6 @@ import Total from './containers/Total/';
 import SelfForm from './containers/SelfForm/';
 import Rule from './containers/Rule/';
 import NotFound from './containers/NotFound';
-import MovieDetail from './containers/MovieDetail/';
 
 export default history => 
     (
