@@ -1,47 +1,47 @@
 {
-  "name": "react-ssr",
-  "version": "1.0.0",
-  "description": "A simple demo with Redux, React-router and React server side rendering",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ibufu/douban-movie-react-ssr.git"
-  },
-  "scripts": {
-    "start": "webpack --progress --colors --config webpack.dev.config.js && webpack --progress --colors --config webpack.node.config.js && node server/dist/server.bundle.js",
-    "server": "node server/dist/server.bundle.js"
-  },
-  "author": "morning <wzl_911@qq.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@antv/g2": "^3.0.11",
-    "antd": "^3.5.2",
-    "babel-polyfill": "^6.13.0",
-    "ejs": "^2.5.1",
-    "express": "^4.14.0",
-    "history": "^3.0.0",
-    "isomorphic-fetch": "^2.2.1",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.7.0",
-    "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.14.0",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-import": "^1.7.0",
-    "babel-preset-latest": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "css-loader": "^0.24.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.22.0",
-    "ignore-loader": "^0.1.1",
-    "redux-logger": "^2.6.1",
-    "style-loader": "^0.13.1",
-    "uglifyjs-webpack-plugin": "^1.2.5",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.0"
-  }
+    "name": "react-ssr",
+    "version": "1.0.0",
+    "description": "A simple demo with Redux, React-router and React server side rendering",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ibufu/douban-movie-react-ssr.git"
+    },
+    "scripts": {
+        "start": "webpack --progress --colors --config webpack.dev.config.js && webpack --progress --colors --config webpack.node.config.js && node server/dist/server.bundle.js",
+        "server": "node server/dist/server.bundle.js"
+    },
+    "author": "morning <wzl_911@qq.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@antv/g2": "^3.0.11",
+        "antd": "^3.5.2",
+        "babel-polyfill": "^6.13.0",
+        "ejs": "^2.5.1",
+        "express": "^4.14.0",
+        "history": "^3.0.0",
+        "isomorphic-fetch": "^2.2.1",
+        "react": "^15.3.1",
+        "react-dom": "^15.3.1",
+        "react-redux": "^4.4.5",
+        "react-router": "^2.7.0",
+        "redux": "^3.5.2",
+        "redux-thunk": "^2.1.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.14.0",
+        "babel-loader": "^6.2.5",
+        "babel-plugin-import": "^1.7.0",
+        "babel-preset-latest": "^6.14.0",
+        "babel-preset-react": "^6.11.1",
+        "babel-preset-stage-0": "^6.5.0",
+        "css-loader": "^0.24.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "html-webpack-plugin": "^2.22.0",
+        "ignore-loader": "^0.1.1",
+        "redux-logger": "^2.6.1",
+        "style-loader": "^0.13.1",
+        "uglifyjs-webpack-plugin": "^1.2.5",
+        "webpack": "^1.13.2",
+        "webpack-dev-server": "^1.15.0"
+    }
 }
