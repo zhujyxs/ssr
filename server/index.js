@@ -1,5 +1,4 @@
 import express from 'express';
-import api from './routes/api';
 import serverRender from './routes/serverRender';
 import path from 'path';
 
@@ -11,8 +10,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.set('views', path.join(__dirname, '../src'));
-
-app.use('/api', api);
 
 app.use('*', serverRender);
 
