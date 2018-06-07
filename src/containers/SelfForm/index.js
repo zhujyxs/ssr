@@ -34,7 +34,7 @@ class SelfForm extends Component {
         }
     
         const array = ['name', 'people', 'id', 'date'];
-        let url = 'http://www.zhanspace.cn/ssr/addRule.php?';
+        let url = 'http://localhost/addRule.php?';
         let isRight = true;
         array.forEach((attr) => {
             const value = $(attr).value;
